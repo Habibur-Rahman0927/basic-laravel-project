@@ -31,10 +31,10 @@
                     <div class="text-center mt-4">
                         <div class="mb-3">
                             <a href="index.html" class="auth-logo">
-                                <img src="assets/images/logo-dark.png" height="30" class="logo-dark mx-auto"
-                                    alt="">
-                                <img src="assets/images/logo-light.png" height="30" class="logo-light mx-auto"
-                                    alt="">
+                                <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="30"
+                                    class="logo-dark mx-auto" alt="">
+                                <img src="{{ asset('backend/assets/images/logo-light.png') }}" height="30"
+                                    class="logo-light mx-auto" alt="">
                             </a>
                         </div>
                     </div>
@@ -46,13 +46,15 @@
                             @csrf
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
-                                    <input class="form-control" id="email" type="email" name="email" required="" placeholder="Email">
+                                    <input class="form-control" id="email" type="email" name="email"
+                                        required="" placeholder="Email">
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
-                                    <input class="form-control" id="password" type="password" name="password" required="" placeholder="Password">
+                                    <input class="form-control" id="password" type="password" name="password"
+                                        required="" placeholder="Password">
                                 </div>
                             </div>
 
@@ -66,8 +68,9 @@
                             <div class="form-group mb-0 row mt-2">
                                 <div class="col-sm-7 mt-3">
                                     @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}" class="text-muted"><i class="mdi mdi-lock"></i> Forgot
-                                        your password?</a>
+                                        <a href="{{ route('password.request') }}" class="text-muted"><i
+                                                class="mdi mdi-lock"></i> Forgot
+                                            your password?</a>
                                     @endif
                                 </div>
                                 <div class="col-sm-5 mt-3">
