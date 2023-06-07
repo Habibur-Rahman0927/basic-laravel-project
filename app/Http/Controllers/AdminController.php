@@ -20,8 +20,11 @@ class AdminController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        return redirect('/');
+        $notification = array(
+            'message' => 'User Logout Successfully done!.',
+            'alert-type' => 'success',
+        );
+        return redirect('/login')->with($notification);
     }
 
     public function profile(Request $request)
@@ -55,7 +58,6 @@ class AdminController extends Controller
         $notification = array(
             'message' => 'Admin Profile Updated Successfully',
             'alert-type' => 'success',
-
         );
         return redirect()->route('admin.profile')->with($notification);
     }
