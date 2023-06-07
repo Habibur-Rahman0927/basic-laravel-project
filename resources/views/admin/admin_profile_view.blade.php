@@ -8,7 +8,7 @@
                     <div class="card">
                         <center>
 
-                            <img class="rounded-circle avatar-xl mt-5" src="{{ asset('upload/admin_images').'/'.$adminData->profile_image}}" alt="Card image cap">
+                            <img class="rounded-circle avatar-xl mt-5" src="{{ (!empty($adminData->profile_image) ? asset('upload/admin_images').'/'.$adminData->profile_image : asset('backend\assets\images\no_image.jpg') )}}" alt="Card image cap">
                         </center>
                         <div class="card-body">
                             <h4 class="card-title">Name: {{$adminData->name}}</h4>
