@@ -8,14 +8,14 @@
                     <div class="card">
                         <center>
 
-                            <img class="rounded-circle avatar-xl mt-5" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap">
+                            <img class="rounded-circle avatar-xl mt-5" src="{{ asset('upload/admin_images').'/'.$adminData->profile_image}}" alt="Card image cap">
                         </center>
                         <div class="card-body">
                             <h4 class="card-title">Name: {{$adminData->name}}</h4>
                             <hr>
                             <h4 class="card-title">Email: {{$adminData->email}}</h4>
                             <hr>
-                            <h4 class="card-title">User Name: {{$adminData->name}}</h4>
+                            <h4 class="card-title">User Name: {{$adminData->username}}</h4>
                             <hr>
                             <a href="{{ route('edit.profile') }}" class="btn btn-info btn-rounded waves-effect waves-light">Edit profile</a>
                         </div>
