@@ -11,6 +11,15 @@
 
                             <h4 class="card-title">Change Password page</h4>
                             <br/>
+
+                            @if (count($errors))
+                                @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{$error}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                @endforeach
+                            @endif
                             <form action="{{ route('update.password') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
