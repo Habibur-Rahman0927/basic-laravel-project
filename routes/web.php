@@ -40,7 +40,7 @@ Route::controller(HomeSliderController::class)->group(function (){
 
 Route::controller(AboutController::class)->group(function (){
     Route::get('/about/page','aboutPage')->name('about.page');
-    // Route::post('/update/slide','updateSlider')->name('update.slide');
+    Route::post('/update/about','updatePage')->name('update.about');
 });
 
 Route::get('/dashboard', function () {

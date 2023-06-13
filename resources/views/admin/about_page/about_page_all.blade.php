@@ -10,7 +10,7 @@
                         <div class="card-body">
 
                             <h4 class="card-title">About page</h4>
-                            <form action="{{ route('update.slide') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update.about') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$about->id}}">
                                 <div class="row mb-3">
