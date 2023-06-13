@@ -10,8 +10,9 @@
                         <div class="card-body">
 
                             <h4 class="card-title">Home Slide page</h4>
-                            <form action="{{ route('update.profile') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update.slide') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$homeSlider->id}}">
                                 <div class="row mb-3">
                                     <label for="title" class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
@@ -34,10 +35,10 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="profile_image" class="col-sm-2 col-form-label">Slider Image</label>
+                                    <label for="home_slide" class="col-sm-2 col-form-label">Slider Image</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="profile_image" name="profile_image" type="file"
-                                            placeholder="Enter Profile Image...">
+                                        <input class="form-control" id="profile_image" name="home_slide" type="file"
+                                            placeholder="Enter home Image...">
                                     </div>
                                 </div>
 
@@ -45,7 +46,7 @@
                                     <label for="showImage" class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-10">
                                         <img id="showImage" class="rounded avatar-lg mt-1"
-                                            src="{{ !empty($homeSlider->home_slide) ? asset('upload/home_slide') . '/' . $homeSlider->home_slide : asset('backend\assets\images\no_image.jpg') }}"
+                                            src="{{ !empty($homeSlider->home_slide) ? asset('/') . $homeSlider->home_slide : asset('backend\assets\images\no_image.jpg') }}"
                                             alt="Card image cap">
                                     </div>
                                 </div>
