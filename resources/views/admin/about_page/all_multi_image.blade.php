@@ -17,8 +17,14 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
-                            <h4 class="card-title">Multi Image All</h4>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <h4 class="card-title">Multi Image All</h4>
+                                </div>
+                                <div class="col-6">
+                                    <a href="{{route('about.multi.image')}}" class="btn btn-info sm" style="float: right">Add Multi Image</a>
+                                </div>
+                            </div>
 
                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -42,8 +48,8 @@
                                             </td>
                                             <td>
                                                 
-                                                <a href="" class="btn btn-info sm" title="Edit"><i class="fas fa-edit"></i></a>
-                                                <a href="" class="btn btn-danger sm" title="Delete"><i class=" fas fa-trash"></i></a>
+                                                <a href="{{ route('edit.multi.image', $image->id) }}" class="btn btn-info sm" title="Edit"><i class="fas fa-edit"></i></a>
+                                                <a href="{{ route('delete.multi.image', $image->id) }}" class="btn btn-danger sm" id="delete" title="Delete"><i class=" fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
