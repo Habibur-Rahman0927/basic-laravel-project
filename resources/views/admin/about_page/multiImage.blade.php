@@ -10,14 +10,14 @@
                         <div class="card-body">
 
                             <h4 class="card-title">Add Multi Image</h4>
-                            <form action="{{ route('update.about') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('store.multi.image') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row mb-3">
                                     <label for="multi_image" class="col-sm-2 col-form-label">Multi Image</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="profile_image" name="multi_image" type="file"
-                                            placeholder="Enter About Multi Image...">
+                                        <input class="form-control" id="profile_image" name="multi_image[]" type="file"
+                                            placeholder="Enter About Multi Image..." multiple="">
                                     </div>
                                 </div>
 
