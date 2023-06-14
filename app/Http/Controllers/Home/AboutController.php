@@ -56,7 +56,7 @@ class AboutController extends Controller
     public function aboutMultiImage(Request $request){
         return view('admin.about_page.multiImage');
     }
-
+    
     public function storeMultiImage(Request $request){
         $image = $request->file('multi_image');
         foreach ($image as $multi_image) {
@@ -70,5 +70,10 @@ class AboutController extends Controller
             'alert-type' => 'success',
         );
         return redirect()->back()->with($notification);
+    }
+
+    public function allMultiImage(Request $request){
+        $allMultiImage = MultiImage::all();
+        return view('admin.about_page.all_multi_image', compact('allMultiImage'));
     }
 }
