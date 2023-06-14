@@ -62,6 +62,11 @@ class PortfolioController extends Controller
     }
 
     public function updatePortfolio(Request $request, $id){
+        $request->validate([
+            'portfolio_name' => 'required',
+            'portfolio_title' => 'required',
+            'portfolio_description' => 'required',
+        ]);
         if ($request->file('portfolio_image')) {
             $image = $request->file('portfolio_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -103,5 +108,10 @@ class PortfolioController extends Controller
             'alert-type' => 'success',
         );
         return redirect()->back()->with($notification);
+    }
+
+    public function portfolioDetails(Request $request, $id){
+        $portfolio = Portfolio::findOrFail($id);
+        return view('frontend.portfolio_details_page', compact('portfolio'));
     }
 }

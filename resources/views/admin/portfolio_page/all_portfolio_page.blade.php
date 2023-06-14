@@ -34,7 +34,7 @@
                                         <th>Portfolio Name</th>
                                         <th>Portfolio Title</th>
                                         <th>Portfolio Image</th>
-                                        <th>Portfolio Description</th>
+                                        {{-- <th>Portfolio Description</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -51,7 +51,7 @@
                                                 <img src="{{ !empty($portfolio->portfolio_image) ? asset('/') . $portfolio->portfolio_image : asset('backend\assets\images\no_image.jpg') }}"
                                                 style="width: 60px; height:50px" alt="Card image cap">
                                             </td>
-                                            <td>{!! $portfolio->portfolio_description !!}</td>
+                                            {{-- <td>{!! $portfolio->portfolio_description !!}</td> --}}
                                             <td>
                                                 
                                                 <a href="{{ route('edit.portfolio', $portfolio->id) }}" class="btn btn-info sm" title="Edit"><i class="fas fa-edit"></i></a>

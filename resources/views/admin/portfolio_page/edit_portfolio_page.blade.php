@@ -10,26 +10,39 @@
                         <div class="card-body">
 
                             <h4 class="card-title">Edit Portfolio</h4>
-                            <form action="{{ route('update.portfolio', $portfolio->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update.portfolio', $portfolio->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="portfolio_name" class="col-sm-2 col-form-label">Portfolio Name</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="portfolio_name" value="{{$portfolio->portfolio_name}}"
-                                            name="portfolio_name" type="text" placeholder="Enter portfolio name ...">
+                                        <input class="form-control" id="portfolio_name"
+                                            value="{{ $portfolio->portfolio_name }}" name="portfolio_name" type="text"
+                                            placeholder="Enter portfolio name ...">
+                                        @error('portfolio_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="portfolio_title" class="col-sm-2 col-form-label">Portfolio title</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="portfolio_title" value="{{$portfolio->portfolio_title}}"
-                                            name="portfolio_title" type="text" placeholder="Enter portfolio title ...">
+                                        <input class="form-control" id="portfolio_title"
+                                            value="{{ $portfolio->portfolio_title }}" name="portfolio_title" type="text"
+                                            placeholder="Enter portfolio title ...">
+                                        @error('portfolio_title')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="portfolio_description" class="col-sm-2 col-form-label">Portfolio Description</label>
+                                    <label for="portfolio_description" class="col-sm-2 col-form-label">Portfolio
+                                        Description</label>
                                     <div class="col-sm-10">
-                                            <textarea class="form-control" id="elm1" name="portfolio_description" type="text">{{$portfolio->portfolio_description}}</textarea>
+                                        <textarea class="form-control" id="elm1" name="portfolio_description" type="text">{{ $portfolio->portfolio_description }}</textarea>
+                                        @error('portfolio_description')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
