@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -59,6 +60,16 @@ Route::controller(PortfolioController::class)->group(function (){
     Route::post('/update/portfolio/{id}','updatePortfolio')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}','deletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}','portfolioDetails')->name('portfolio.details');
+});
+
+Route::controller(BlogCategoryController::class)->group(function (){
+    Route::get('/all/blog/category/page','allBlogCategory')->name('all.blogs.category');
+    Route::get('/all/blog/category','addBlogCategory')->name('add.blog.category');
+    Route::post('/store/blog/category','storeBlogCategory')->name('store.blog.category');
+    Route::get('/edit/blog/category/{id}','editBlogCategory')->name('edit.blog.category');
+    Route::post('/update/blog/category/{id}','updateBlogCategory')->name('update.blog.category');
+    Route::get('/delete/blog/category/{id}','deleteBlogCategory')->name('delete.blog.category');
+    // Route::get('/portfolio/details/{id}','portfolioDetails')->name('portfolio.details');
 });
 
 Route::get('/dashboard', function () {
